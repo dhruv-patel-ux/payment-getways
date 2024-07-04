@@ -1,0 +1,36 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <h3>Pay With Differents Methods</h3>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <div class="img-container">
+      <img src="/assets/payment-image.avif" alt="">
+    </div>
+    <form [formGroup]="paymentForm" (ngSubmit)="checkout()">
+      <div class="example-container">
+        <mat-form-field [hideRequiredMarker]="false">
+          <mat-label>Name</mat-label>
+          <input formControlName="name" matInput>
+        </mat-form-field>
+        <mat-form-field [hideRequiredMarker]="false">
+          <mat-label>Quantity</mat-label>
+          <input type="number" formControlName="quantity" matInput>
+        </mat-form-field>
+        <mat-form-field [hideRequiredMarker]="false">
+          <mat-label>Price</mat-label>
+          <input type="number" formControlName="price" matInput>
+        </mat-form-field>
+        <mat-form-field [hideRequiredMarker]="false">
+          <mat-label>Payment Getways</mat-label>
+          <mat-select formControlName="paymentMethod"><mat-option value="stripe">Stripe</mat-option>
+            <mat-option value="paypal">Paypal</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="example-button-row">
+          <button mat-flat-button [disabled]="paymentForm.invalid">Pay</button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
