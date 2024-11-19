@@ -8,7 +8,7 @@ import { loadStripe } from '@stripe/stripe-js';
 export class StripeService {
   constructor(private http: HttpClient) {}
   private stripePromise = loadStripe(
-    'pk_test_51PIpLLSHukomVMbJmTLh0xkDZDLdmSQpdpVMqtqNag6urdhtN42y9Jgr6MzxH6TfP8zUqYdCNhfzBBBFCd7Ghqt400GQ6t5GW5'
+    'your strip public key'
   );
 
   async createCheckoutSession(body: any) {
